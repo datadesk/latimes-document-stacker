@@ -11,15 +11,20 @@
 {% endblock %}
 
 {% block content %}
-    <table id="table_list" cellspacing="0">
+    <table id="document_list" cellspacing="0">
         <tbody>
             {% for obj in object_list %}
             <tr id="{{ obj.get_absolute_url }}">
-                <td style="{% if not forloop.first %}border-top: 1px dotted gray;{% endif %}{% if forloop.last %}border-bottom: 1px dotted gray;{% endif %}">
+                <td style="{% if not forloop.first %}border-top: 1px dotted gray;{% endif %}{% if forloop.last %}border-bottom: 1px dotted gray;{% endif %} vertical-align:top;">
                     <h2><a target="_blank" class="headline" href="{{ obj.get_absolute_url }}">{{ obj|safe }}</a></h2>
                     <span class="pubdate">{{ obj.publication_date|date:"N j, Y" }}</span>
                     <span class="byline">{% if obj.byline %}&nbsp;By&nbsp;{{ obj.byline }}{% endif %}</span>
                     <p class="description">{% if obj.description %}{{ obj.description|trim_p:1|striptags|truncatewords:100|safe }}{% endif %}</p>
+                </td>
+                <td class="documentthumb" style="{% if not forloop.first %}border-top: 1px dotted gray;{% endif %} {% if forloop.last %}border-bottom: 1px dotted gray;{% endif %}">
+                    <a href="{{ obj.get_absolute_url }}">
+                        <img src="{{ obj.get_small_url }}" class="icon">
+                    </a>
                 </td>
             </tr>
             {% endfor %}
@@ -28,11 +33,10 @@
     <div class="clear pad10vert"></div>
     {% if has_next %}
         <a href="/page/{{ next_page_number }}/">
-            More Spreadsheets
+            More Documents
         </a>
         <div class="clear pad5vert"></div>
     {% endif %}
-
 {% endblock %}
 
 

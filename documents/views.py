@@ -134,7 +134,7 @@ def document_detail(request, slug):
         context = {
             'object': obj,
         }
-        response = direct_to_template(request, 'documents/document_detail.html', context)
+        response = direct_to_template(request, 'document_detail.html', context)
         memcache.add(cache_key, response, 60)
         return response
 
