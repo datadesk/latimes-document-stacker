@@ -175,7 +175,7 @@ def sitemap(request):
     A sitemap for Google.
     """
     document_list = Document.all().filter("is_published =", True).order("-publication_date")
-    project_list = Project.all()
+    project_list = Project.all().filter("is_published =", True)
     context = {
         'document_list': document_list,
         'project_list': project_list,
