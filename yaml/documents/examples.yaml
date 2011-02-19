@@ -1,0 +1,42 @@
+documents:
+- slug: dr-michael-kamrava-proposed-decision
+  title: Five years probation recommended for Kamrava
+  document_cloud_id: 29531-kamrava-proposed-decision-1
+  byline: Molly Hennessy-Fiske
+  publication_date: 2011-01-24
+  description: "<p>An administrative law judge has recommended five years probation for Dr. Michael Kamrava, the controversial fertility doctor who helped Nadya Suleman conceive 14 children, including octuplets. The California Medical Board, which meets later this week, must now make a decision on the recommendation.</p><p>Read more: <a href=http://latimesblogs.latimes.com/lanow/2011/01/nadya-suleman-octomom-michael-kamrava-five-years-probation.html>&lsquo;Octomom&rsquo; Nadya Suleman's fertility doctor should get five years' probation, judge recommends</a></p>"
+  is_published: True
+  sources: "California Medical Board"
+  credits: "Megan Garvey, Molly Hennessy-Fiske, Ben Welsh"
+  project_slug: michael-kamrava-and-octomom
+  tags:
+    - Medicine
+    - California Medical Board
+    - Michael Kamrava
+    - Nadya Suleman
+    - Fertility
+    - Probation
+    - Octomom
+    - Beverly Hills
+
+- slug: dr-michael-kamrava-petition-to-revoke
+  title: Medical Board petition to revoke Kamrava's license
+  document_cloud_id: 29539-medical-board-petition-to-revoke-kamravas-license
+  byline: Molly Hennessy-Fiske
+  publication_date: 2011-01-24
+  description: ""
+  is_published: True
+  sources: "California Medical Board"
+  credits: "Megan Garvey, Molly Hennessy-Fiske, Ben Welsh"
+  show_pdf_link: False
+  show_document_cloud_rail: False
+  project_slug: michael-kamrava-and-octomom
+  tags:
+    - Medicine
+    - California Medical Board
+    - Michael Kamrava
+    - Nadya Suleman
+    - Fertility
+    - Probation
+    - Octomom
+    - Beverly Hills
