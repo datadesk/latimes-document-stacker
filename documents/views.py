@@ -111,7 +111,6 @@ def project_detail(request, slug):
         context = {
             'object': obj,
             'document_list': obj.document_set.filter("is_published =", True).order("-publication_date").order("order_in_project"),
-            'share_url': 'http://documents.latimes.com%s' % obj.get_absolute_url()
         }
         response = direct_to_template(request, 'documents/project_detail.html', context)
         memcache.add(cache_key, response, 60)
@@ -134,7 +133,6 @@ def document_detail(request, slug):
             raise Http404
         context = {
             'object': obj,
-            'share_url': 'http://documents.latimes.com%s' % obj.get_absolute_url()
         }
         response = direct_to_template(request, 'documents/document_detail.html', context)
         memcache.add(cache_key, response, 60)
