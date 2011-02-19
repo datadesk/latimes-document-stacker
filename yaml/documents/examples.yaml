@@ -1,42 +1,29 @@
 documents:
-- slug: dr-michael-kamrava-proposed-decision
-  title: Five years probation recommended for Kamrava
-  document_cloud_id: 29531-kamrava-proposed-decision-1
-  byline: Molly Hennessy-Fiske
-  publication_date: 2011-01-24
-  description: "<p>An administrative law judge has recommended five years probation for Dr. Michael Kamrava, the controversial fertility doctor who helped Nadya Suleman conceive 14 children, including octuplets. The California Medical Board, which meets later this week, must now make a decision on the recommendation.</p><p>Read more: <a href=http://latimesblogs.latimes.com/lanow/2011/01/nadya-suleman-octomom-michael-kamrava-five-years-probation.html>&lsquo;Octomom&rsquo; Nadya Suleman's fertility doctor should get five years' probation, judge recommends</a></p>"
+- slug: jerry-brown-proposed-budget-2010-2011
+  title: "Gov. Jerry Brown's proposed state budget"
+  document_cloud_id: 25825-gov-jerry-browns-proposed-state-budget
+  byline: Shane Goldmacher
+  publication_date: 2011-01-10
+  description: "<p>Gov. Jerry Brown has proposed deep cuts to nearly all state programs while betting that Californians would agree to extend a trio of recent tax hikes in a spirit of shared sacrifice. Under what the governor characterized as an &ldquo;honest&rdquo; budget, taxpayers would be asked to dig deeper into their pockets — after the state's welfare program is cut in half, $1 billion is trimmed from its universities, and tens of thousands of elderly and disabled residents lose access to care at home.</p><p>Only elementary and secondary schools would be spared the knife, having already been wounded deeply, Brown reasoned. But he warned that unless the tax increases continue for five years, teachers and students might lose that protection.</p><p>&ldquo;We've had 10 years of gimmicks and tricks,&rdquo; he said. &ldquo;All of that puts us in a mess. It's not honest, and we are now going to make it transparent as possible. It is better to take our medicine now and get the state on a balanced footing.&rdquo;</p><p>More: <a href='http://latimesblogs.latimes.com/california-politics/budget/'>Follow the latest budget news on PolitiCal</a></p><p>Interactive: <a href='http://www.latimes.com/news/local/budget/'>Try your hand at eliminating the state's $28 billion deficit</a></p>"
   is_published: True
-  sources: "California Medical Board"
-  credits: "Megan Garvey, Molly Hennessy-Fiske, Ben Welsh"
-  project_slug: michael-kamrava-and-octomom
+  project_slug: california-budget-2011-2012
   tags:
-    - Medicine
-    - California Medical Board
-    - Michael Kamrava
-    - Nadya Suleman
-    - Fertility
-    - Probation
-    - Octomom
-    - Beverly Hills
+    - Jerry Brown
+    - Politics
+    - Budget
+    - California
 
-- slug: dr-michael-kamrava-petition-to-revoke
-  title: Medical Board petition to revoke Kamrava's license
-  document_cloud_id: 29539-medical-board-petition-to-revoke-kamravas-license
-  byline: Molly Hennessy-Fiske
-  publication_date: 2011-01-24
-  description: ""
+- slug: la-county-impact-brown-proposed-budget-2010-2011
+  title: "Impact of proposed state budget on L.A. County"
+  document_cloud_id: 25847-impact-of-proposed-state-budget-on-l-a-county
+  byline: Garrett Therolf
+  publication_date: 2011-01-11
+  description: "<p>Los Angeles County officials assessment of Gov. Jerry Brown&rsquo;s proposed state budget for fiscal year 2011-12 finds $12.5 billion in funding reductions which would affect various county programs.</p><p>More: <a href='http://latimesblogs.latimes.com/california-politics/budget/'>Follow the latest budget news on PolitiCal</a></p><p>Interactive: <a href='http://www.latimes.com/news/local/budget/'>Try your hand at eliminating the state's $28 billion deficit</a></p>"
   is_published: True
-  sources: "California Medical Board"
-  credits: "Megan Garvey, Molly Hennessy-Fiske, Ben Welsh"
-  show_pdf_link: False
-  show_document_cloud_rail: False
-  project_slug: michael-kamrava-and-octomom
+  project_slug: california-budget-2011-2012
   tags:
-    - Medicine
-    - California Medical Board
-    - Michael Kamrava
-    - Nadya Suleman
-    - Fertility
-    - Probation
-    - Octomom
-    - Beverly Hills
+    - Jerry Brown
+    - Politics
+    - Budget
+    - California
+    - Los Angeles County
