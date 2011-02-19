@@ -184,25 +184,4 @@ def sitemap(request):
     }
     return direct_to_template(request, 'sitemap.xml', context, mimetype='text/xml')
 
-#
-# Goofy ad hoc shiz
-#
-
-def ping(request):
-    """
-    Pings a random url in hopes of keeping AppEngine awake. 
-    
-    The goal is avoid "cold starts" that often throw 500 errors by keeping
-    an instance up at all times.
-    """
-    slug = request.GET.get("slug", None)
-    if slug:
-        url = 'http://latimes-document-cloud.appspot.com/%s/' % slug
-        return HttpResponse("OK")
-    else:
-        object_list = list(Document.all().filter("is_published =", True))
-        random_object = random.sample(object_list, 1)[0]
-        params = dict(slug=random_object.slug)
-        taskqueue.add(url='/ping/', params=params, method='GET')
-        return HttpResponse("OK")
 
