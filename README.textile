@@ -76,7 +76,7 @@ h3. *07. Deploy your app*
 Once everything's set, deploying your application to Google App Engine only takes a single command. Here it is.
 <pre><code>$ python2.5 manage.py update</code></pre>
 
-h3. *08. Load the demo table on your live site*
+h3. *08. Load the demo document on your live site*
 
 You'll run the same _loaddocument_ command from step five, but drop the host option. It will post to your live site by default, so it's unnecessary this time around.
 <pre><code>$ python2.5 manage.py loaddocument usc-president-wants-about-raves</code></pre>
@@ -87,7 +87,7 @@ You should now see your starter site up and running at "http://my-document-stack
 
 h3. *10. Publish you own documents*
 
-Before you can publish your own data table, you'll need to learn about our YAML-based configuration system. But don't worry, it's not that hard.
+Before you can publish your own document, you'll need to learn about our YAML-based configuration system. But don't worry, it's not that hard.
 
 
 
