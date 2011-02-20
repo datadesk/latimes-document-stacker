@@ -11,6 +11,14 @@
 {% endblock %}
 
 {% block content %}
+    {% if object.description %}
+        <div id="description">{{ object.description|safe }}</div>
+    {% endif %}
+    
+    {% if object.byline %}
+        <div id="byline">&mdash; {{ object.byline|safe }}</div>
+    {% endif %}
+
     <table id="document_list" cellspacing="0">
         <tbody>
             {% for obj in document_list %}
