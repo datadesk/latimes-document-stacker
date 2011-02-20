@@ -30,12 +30,12 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="clear pad10vert"></div>
+    <div class="clear"></div>
     {% if has_next %}
-        <a href="/page/{{ next_page_number }}/">
+        <a href="{{ next_page_url }}">
             More Documents
         </a>
-        <div class="clear pad5vert"></div>
+        <div class="clear"></div>
     {% endif %}
 {% endblock %}
 

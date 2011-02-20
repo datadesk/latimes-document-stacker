@@ -68,6 +68,7 @@ def document_list(request, page=1):
             'page_number': page.number,
             'has_next': page.has_next(),
             'next_page_number': page.next_page_number(),
+            'next_page_url': '/page/%s/' % (page.next_page_number())
         }
         response = direct_to_template(request, 'document_list.html', context)
         # Add it to the cache
@@ -166,6 +167,7 @@ def tag_page(request, tag, page):
         'page_number': page.number,
         'has_next': page.has_next(),
         'next_page_number': page.next_page_number(),
+        'next_page_url': '/tag/%s/page/%s/' % (tag.title, page.next_page_number())
     }
     return direct_to_template(request, 'document_list.html', context)
 
