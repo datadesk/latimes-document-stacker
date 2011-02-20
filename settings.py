@@ -16,11 +16,11 @@
 
 import os
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Ben Welsh', 'ben.welsh@gmail.com'),
+    ('', ''),
 )
 
 MANAGERS = ADMINS
