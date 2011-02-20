@@ -11,13 +11,16 @@
 {% endblock %}
 
 {% block content %}
-    {% if object.description %}
-        <div id="description">{{ object.description|safe }}</div>
-    {% endif %}
-    
-    {% if object.byline %}
-        <div id="byline">&mdash; {{ object.byline|safe }}</div>
-    {% endif %}
+    <div id="document_stacker">
+        {% if object.description %}
+            <div id="description">{{ object.description|safe }}</div>
+        {% endif %}
+        
+        {% if object.byline %}
+            <div id="byline">&mdash; {{ object.byline|safe }}</div>
+        {% endif %}
+    </div>
+    <hr style="margin:0;" />
 
     <table id="document_list" cellspacing="0">
         <tbody>
