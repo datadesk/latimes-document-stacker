@@ -13,5 +13,20 @@ indexes:
 - kind: Document
   properties:
   - name: is_published
+  - name: project
+  - name: publication_date
+    direction: desc
+
+- kind: Document
+  properties:
+  - name: is_published
+  - name: project
+  - name: publication_date
+    direction: desc
+  - name: order_in_project
+
+- kind: Document
+  properties:
+  - name: is_published
   - name: publication_date
     direction: desc

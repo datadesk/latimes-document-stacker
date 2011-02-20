@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load toolbox_tags %}
+
+{% block title %}{{ object.title }} - {{ block.super }}{% endblock %}
+
+{% block headline %}
+<a href="{{ object.get_rss_url }}">
+    <img src="/media/img/rss/rss_notext.gif" class="rss">
+</a>
+<h1>{{ object.title|safe }}</h1>
+{% endblock %}
+
+{% block content %}
+    <table id="document_list" cellspacing="0">
+        <tbody>
+            {% for obj in document_list %}
+            <tr id="{{ obj.get_absolute_url }}">
+                <td style="{% if not forloop.first %}border-top: 1px dotted gray;{% endif %}{% if forloop.last %}border-bottom: 1px dotted gray;{% endif %} vertical-align:top;">
+                    <h2><a target="_blank" class="headline" href="{{ obj.get_absolute_url }}">{{ obj|safe }}</a></h2>
+                    <span class="pubdate">{{ obj.publication_date|date:"N j, Y" }}</span>
+                    <span class="byline">{% if obj.byline %}&nbsp;By&nbsp;{{ obj.byline }}{% endif %}</span>
+                    <p class="description">{% if obj.description %}{{ obj.description|trim_p:1|striptags|truncatewords:100|safe }}{% endif %}</p>
+                </td>
+                <td class="documentthumb" style="{% if not forloop.first %}border-top: 1px dotted gray;{% endif %} {% if forloop.last %}border-bottom: 1px dotted gray;{% endif %}">
+                    <a href="{{ obj.get_absolute_url }}">
+                        <img src="{{ obj.get_small_url }}" class="icon">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+

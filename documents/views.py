@@ -112,7 +112,7 @@ def project_detail(request, slug):
             'object': obj,
             'document_list': obj.document_set.filter("is_published =", True).order("-publication_date").order("order_in_project"),
         }
-        response = direct_to_template(request, 'documents/project_detail.html', context)
+        response = direct_to_template(request, 'project_detail.html', context)
         memcache.add(cache_key, response, 60)
         return response
 
