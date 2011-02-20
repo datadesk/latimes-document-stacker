@@ -18,4 +18,4 @@ body {font-size:14px;}
 #document_stacker div#similar a {text-decoration:none;}
 #document_stacker div#sources, div#credits, div#tags {margin-bottom:5px}
 #document_stacker div#byline {text-align:right; margin-bottom:5px;}
-#document {margin:30px 0 0 0;}
+#document {margin:30px 0 0 0; padding:0;}
