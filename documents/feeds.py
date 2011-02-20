@@ -10,11 +10,8 @@ class LatestDocuments(Feed):
     The latest documents published on the site.
     """
     feed_type = MediaRSSFeed
-    title = "Recent documents from the Los Angeles Times"
-    link = "http://documents.latimes.com"
-    description = "The documents from the Los Angeles Times."
-    title_template = "documents/feeds/document_title.html"
-    description_template = "documents/feeds/document_description.html"
+    title_template = "feeds/document_title.html"
+    description_template = "feeds/document_description.html"
     
     def items(self):
         return Document.all().filter("is_published =", True).order("-publication_date")[:10]
@@ -34,8 +31,8 @@ class ProjectDocumentsFeed(Feed):
     The latest documents published in a particular project.
     """
     feed_type = MediaRSSFeed
-    title_template = "documents/feeds/project_documents_title.html"
-    description_template = "documents/feeds/project_documents_description.html"
+    title_template = "feeds/project_documents_title.html"
+    description_template = "feeds/project_documents_description.html"
     
     def get_object(self, bits):
         if len(bits) != 1:

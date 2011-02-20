@@ -38,6 +38,7 @@ documents:
   publication_date: 2011-01-26
   description: "<p>USC President C.L. Max Nikias warned students from attending raves, which he called &ldquo;a specific danger that has become increasingly prevalent&rdquo; in Los Angeles. He specifically referred to raves held near USC at the Coliseum and Shrine Auditorium, and warned that because the hallucinogenic drug Ecstasy is common at the events, &ldquo;they present serious risks to all who attend.&rdquo; The letter, released on Jan. 26, 2011, was distributed a week before the Coliseum Commission meets, and could discuss whether to bring back the Electric Daisy Carnival rave in June to the Coliseum. A 15-year-old girl, Sasha Rodriguez, fatally overdosed on Ecstasy at the Electric Daisy Carnival in 2010.</p>"
   is_published: True
+  show_document_cloud_rail: false
   sources: "University of Southern California"
   credits: "Rong-Gong Lin II, Ben Welsh"
   tags:
