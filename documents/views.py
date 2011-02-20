@@ -153,7 +153,7 @@ def tag_page(request, tag, page):
     if not tag:
         raise Http404
     object_list = Document.all().filter('tags =', tag.key()).filter("is_published =", True)
-    paginator = Paginator(object_list, 15)
+    paginator = Paginator(object_list, 10)
     # Limit it to thise page
     try:
         page = paginator.page(page)
@@ -162,12 +162,12 @@ def tag_page(request, tag, page):
     # Create a response and pass it back
     context = {
         'headline': 'Documents tagged &lsquo;%s&rsquo;' % tag.title,
-        'object_list': group_objects_by_number(page.object_list),
+        'object_list': page.object_list,
         'page_number': page.number,
         'has_next': page.has_next(),
         'next_page_number': page.next_page_number(),
     }
-    return direct_to_template(request, 'documents/tag_detail.html', context)
+    return direct_to_template(request, 'document_list.html', context)
 
 
 def sitemap(request):

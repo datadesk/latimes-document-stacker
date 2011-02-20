@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load toolbox_tags %}
 
-{% block title %}{{ headline }} - {{ block.super }}{% endblock %}
+{% block title %}{{ headline|safe }} - {{ block.super }}{% endblock %}
 
 {% block headline %}
 <a href="/feeds/latest/">
