@@ -10,14 +10,17 @@ class LatestDocuments(Feed):
     The latest documents published on the site.
     """
     feed_type = MediaRSSFeed
-    title_template = "feeds/document_title.html"
-    description_template = "feeds/document_description.html"
+    title = "Latest documents"
+    link = ""
+    description = ""
+    title_template = "feeds/title.html"
+    description_template = "feeds/description.html"
     
     def items(self):
         return Document.all().filter("is_published =", True).order("-publication_date")[:10]
     
-    def item_pubdate(self, item):
-        return datetime(*(item.publication_date.timetuple()[:6]))
+    def item_pubdate(self, obj):
+        return datetime(*(obj.publication_date.timetuple()[:6]))
     
     def item_extra_kwargs(self, obj):
         return {
@@ -31,8 +34,8 @@ class ProjectDocumentsFeed(Feed):
     The latest documents published in a particular project.
     """
     feed_type = MediaRSSFeed
-    title_template = "feeds/project_documents_title.html"
-    description_template = "feeds/project_documents_description.html"
+    title_template = "feeds/title.html"
+    description_template = "feeds/description.html"
     
     def get_object(self, bits):
         if len(bits) != 1:
@@ -47,7 +50,7 @@ class ProjectDocumentsFeed(Feed):
         return "Recent documents about %s" % obj.title
     
     def description(self, obj):
-        return "The latest documents about %s from the Los Angeles Times" % obj.title
+        return "The latest documents about %s" % obj.title
     
     def link(self, obj):
         if not obj:
@@ -57,8 +60,8 @@ class ProjectDocumentsFeed(Feed):
     def items(self, obj):
         return obj.document_set.filter("is_published =", True).order("-publication_date")[:10]
     
-    def item_pubdate(self, item):
-        return datetime(*(item.publication_date.timetuple()[:6]))
+    def item_pubdate(self, obj):
+        return datetime(*(obj.publication_date.timetuple()[:6]))
     
     def item_extra_kwargs(self, obj):
         return {
