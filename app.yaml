@@ -11,5 +11,9 @@ handlers:
 - url: /media
   static_dir: media
 
+- url: /_/.*
+  script: tasks/main.py
+  login: admin
+
 - url: /.*
   script: main.py

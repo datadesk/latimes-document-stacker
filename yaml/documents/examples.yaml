@@ -4,8 +4,10 @@ documents:
   document_cloud_id: 25825-gov-jerry-browns-proposed-state-budget
   byline: Shane Goldmacher
   publication_date: 2011-01-10
-  description: "<p>Gov. Jerry Brown has proposed deep cuts to nearly all state programs while betting that Californians would agree to extend a trio of recent tax hikes in a spirit of shared sacrifice. Under what the governor characterized as an &ldquo;honest&rdquo; budget, taxpayers would be asked to dig deeper into their pockets — after the state's welfare program is cut in half, $1 billion is trimmed from its universities, and tens of thousands of elderly and disabled residents lose access to care at home.</p><p>Only elementary and secondary schools would be spared the knife, having already been wounded deeply, Brown reasoned. But he warned that unless the tax increases continue for five years, teachers and students might lose that protection.</p><p>&ldquo;We've had 10 years of gimmicks and tricks,&rdquo; he said. &ldquo;All of that puts us in a mess. It's not honest, and we are now going to make it transparent as possible. It is better to take our medicine now and get the state on a balanced footing.&rdquo;</p><p>More: <a href='http://latimesblogs.latimes.com/california-politics/budget/'>Follow the latest budget news on PolitiCal</a></p><p>Interactive: <a href='http://www.latimes.com/news/local/budget/'>Try your hand at eliminating the state's $28 billion deficit</a></p>"
+  description: "<p>Gov. Jerry Brown has proposed deep cuts to nearly all state programs while betting that Californians would agree to extend a trio of recent tax hikes in a spirit of shared sacrifice. Under what the governor characterized as an &ldquo;honest&rdquo; budget, taxpayers would be asked to dig deeper into their pockets — after the state's welfare program is cut in half, $1 billion is trimmed from its universities, and tens of thousands of elderly and disabled residents lose access to care at home.</p>"
   is_published: True
+  sources: <a href='http://www.ebudget.ca.gov/'>California Department of Finance</a>
+  credits: Ben Welsh
   project_slug: california-budget-2011-2012
   tags:
     - Jerry Brown
@@ -20,6 +22,7 @@ documents:
   publication_date: 2011-01-11
   description: "<p>Los Angeles County officials assessment of Gov. Jerry Brown&rsquo;s proposed state budget for fiscal year 2011-12 finds $12.5 billion in funding reductions which would affect various county programs.</p><p>More: <a href='http://latimesblogs.latimes.com/california-politics/budget/'>Follow the latest budget news on PolitiCal</a></p><p>Interactive: <a href='http://www.latimes.com/news/local/budget/'>Try your hand at eliminating the state's $28 billion deficit</a></p>"
   is_published: True
+  credits: Garett Therolf, Ben Welsh
   project_slug: california-budget-2011-2012
   tags:
     - Jerry Brown

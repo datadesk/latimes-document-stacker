@@ -3,7 +3,6 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 
 url_list = [
-    ('/_/document/shorten-url/', ShortenDocumentUrl),
     ('/_/document/update-similar/', UpdateSimilarDocuments),
 ]
 
