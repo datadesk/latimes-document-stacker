@@ -64,8 +64,8 @@ Note that you'll see me using _python2.5_ throughout, instead of the usual _pyth
 
 h3. *05. Load an example document*
 
-You'll learn how to add your own documents later, but for now we'll work with an example file: a letter from the USC president advising students against attending raves. Jump back to your first terminal shell and drop the following line, which instructs our _loaddocument_ management command to follow instructions in the _usc-president-wants-about-raves_ configuration and create a new document in the test site we just launched at "http://localhost:8000":http://localhost:8000.
-<pre><code>$ python2.5 manage.py loaddocument usc-president-wants-about-raves --host=localhost:8000</code></pre>
+You'll learn how to add your own documents later, but for now we'll work with an example file: a letter from the USC president advising students against attending raves. Jump back to your first terminal shell and drop the following line, which instructs our _loaddocument_ management command to follow instructions in the _usc-president-warns-about-raves_ configuration and create a new document in the test site we just launched at "http://localhost:8000":http://localhost:8000.
+<pre><code>$ python2.5 manage.py loaddocument usc-president-warns-about-raves --host=localhost:8000</code></pre>
 
 h3. *06. Check it out*
 
@@ -79,7 +79,7 @@ Once everything's set, deploying your application to Google App Engine only take
 h3. *08. Load the demo document on your live site*
 
 You'll run the same _loaddocument_ command from step five, but drop the host option. It will post to your live site by default, so it's unnecessary this time around.
-<pre><code>$ python2.5 manage.py loaddocument usc-president-wants-about-raves</code></pre>
+<pre><code>$ python2.5 manage.py loaddocument usc-president-warns-about-raves</code></pre>
 
 h3. *09. Check it out*
 
