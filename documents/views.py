@@ -21,6 +21,7 @@ from google.appengine.api.labs import taskqueue
 
 # Etc.
 import datetime
+from django.conf import settings
 
 #
 # Caching, grouping and the like
@@ -35,7 +36,7 @@ def get_cached_response(request, cache_key):
     # Hit the cache and see if it already has this key
     cached_data = memcache.get(cache_key)
     # If it does, return the cached data (unless we force a reload with the qs)
-    if cached_data is not None and not request.GET.get('force', None):
+    if cached_data is not None and not request.GET.get('force', None) and not settings.DEBUG:
         return cached_data
 
 #
