@@ -27,9 +27,6 @@ urlpatterns = patterns('documents.views',
     # Tag pages
     url(r'^tag/(?P<tag>.*)/page/(?P<page>[0-9]+)/$', 'tag_page', name='tag-page'),
 
-    # Secret ping page
-    url(r'^ping/$', 'ping', name='ping'),
-
     # The document/project detail page
     url(r'^(?P<slug>[-\w]+)/$', 'object_detail', name='object-detail'),
     

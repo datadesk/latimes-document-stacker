@@ -1,0 +1,7 @@
+<h5>Similar documents</h5>
+<ul>
+{% for obj in object.get_similar_documents_list|slice:"3" %}
+    <li><a target="_blank" href="{{ obj.get_absolute_url }}">&raquo; {{ obj.title|safe }}</a></li>
+{% endfor %}
+</ul>
+

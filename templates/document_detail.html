@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.title|safe }} - {{ block.super }}{% endblock %}
+
+{% if object.description %}
+    {% block description %}{{ object.description|striptags|safe }}{% endblock %}
+{% endif %}
+
+{% if object.tag_list %}
+    {% block keywords %}{{ object.get_keywords_list }}, {{ block.super }}{% endblock %}
+{% endif %}
+
+{% block extra-js %}
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("jquery", "1", {uncompressed:true})
+    </script>
+{% endblock %}
+
+{% block headline %}
+{% if object.project %}<h4><a href='{{ object.project.get_absolute_url }}'>{{ object.project.title }}</a></h4>{% endif %}
+<h1>{{ object.title|safe }}</h1>
+{% endblock %}
+
+{% block content %}
+    <div id="document_stacker">
+    
+        {% if object.similar_documents %}
+            <div id="similar">{% include "similar_documents.html" %}</div>
+        {% endif %}
+        
+        {% if object.description %}
+            <div id="description" {% if object.similar_documents %}style="width:660px;"{% endif %}>{{ object.description|safe }}</div>
+        {% endif %}
+        
+        {% if object.byline %}
+            <div id="byline" {% if object.similar_tables %}style="width:660px;"{% endif %}>&mdash; {{ object.byline|safe }} ({{ object.publication_date|date:"N j, Y" }})</div>
+        {% endif %}
+        
+        <div id="document"></div>
+        
+        <script src="http://s3.documentcloud.org/viewer/loader.js"></script>
+        <script type="text/javascript">
+            DV.load('http://www.documentcloud.org/documents/{{ object.document_cloud_id }}.js', {
+               container : '#document',
+               width: 950,
+               height: 1009,
+               zoom: 'auto',
+               {% if object.show_document_cloud_rail %}showSidebar: true{% else %}showSidebar: false{% endif %}
+             });
+        </script>
+        
+        <div class="clear"></div>
+        
+        {% if object.footer %}<div id="footer">{{ object.footer|safe }}</div>{% endif %}
+        {% if object.tags %}<div id="tags">Tags: {{ object.get_html_tag_list|safe }}</div>{% endif %}
+        {% if object.sources %}<div id="sources">Sources: {{ object.sources|safe }}</div>{% endif %}
+        {% if object.credits %}<div id="credits">Credits: {{ object.credits|safe }}</div>{% endif %}
+    
+    </div>
+{% endblock %}
+
+
+
+

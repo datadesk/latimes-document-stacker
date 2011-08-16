@@ -1,19 +1,30 @@
 {% extends "base.html" %}
 {% load toolbox_tags %}
 
-{% block title %}{{ headline|safe }} - {{ block.super }}{% endblock %}
+{% block title %}{{ object.title }} - {{ block.super }}{% endblock %}
 
 {% block headline %}
-<a href="/feeds/latest/">
+<a href="{{ object.get_rss_url }}">
     <img src="/media/img/rss/rss_notext.gif" class="rss">
 </a>
-<h1>{{ headline|safe }}{% ifnotequal page_number 1 %}&nbsp;<span style="font-size:16px;">Page {{ page_number }}</span>{% endifnotequal %}</h1>
+<h1>{{ object.title|safe }}</h1>
 {% endblock %}
 
 {% block content %}
+    <div id="document_stacker">
+        {% if object.description %}
+            <div id="description">{{ object.description|safe }}</div>
+        {% endif %}
+        
+        {% if object.byline %}
+            <div id="byline">&mdash; {{ object.byline|safe }}</div>
+        {% endif %}
+    </div>
+    <hr style="margin:0;" />
+
     <table id="document_list" cellspacing="0">
         <tbody>
-            {% for obj in object_list %}
+            {% for obj in document_list %}
             <tr id="{{ obj.get_absolute_url }}">
                 <td style="{% if not forloop.first %}border-top: 1px dotted gray;{% endif %}{% if forloop.last %}border-bottom: 1px dotted gray;{% endif %} vertical-align:top;">
                     <h2><a target="_blank" class="headline" href="{{ obj.get_absolute_url }}">{{ obj|safe }}</a></h2>
@@ -30,13 +41,6 @@
             {% endfor %}
         </tbody>
     </table>
-    <div class="clear"></div>
-    {% if has_next %}
-        <a href="{{ next_page_url }}">
-            More Documents
-        </a>
-        <div class="clear"></div>
-    {% endif %}
 {% endblock %}
 
 

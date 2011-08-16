@@ -1,6 +1,7 @@
 projects:
-- slug: michael-kamrava-and-octomom
-  title: Accusations against &lsquo;Octomom&rsquo; fertility doctor
-  document_cloud_id: 1001
-  description: ""
+- slug: california-budget-2011-2012
+  title: California state budget
+  document_cloud_id: 936
+  description: "<p>The state&rsquo;s budget shortfall for the rest of this fiscal year and next, estimated to be $28 billion, is the size of the total general fund budget of 12 states combined: Delaware, Idaho, Maine, Montana, Nebraska, Nevada, New Hampshire, North Dakota, Rhode Island, South Dakota, Vermont and West Virginia.</p>"
   is_published: True
+

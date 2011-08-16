@@ -1,4 +1,4 @@
-application: latimes-document-stacker
+application: document-stacker
 version: 1
 runtime: python
 api_version: 1
@@ -10,6 +10,10 @@ handlers:
 
 - url: /media
   static_dir: media
+
+- url: /_/.*
+  script: tasks/main.py
+  login: admin
 
 - url: /.*
   script: main.py

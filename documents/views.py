@@ -21,6 +21,7 @@ from google.appengine.api.labs import taskqueue
 
 # Etc.
 import datetime
+from django.conf import settings
 
 #
 # Caching, grouping and the like
@@ -35,7 +36,7 @@ def get_cached_response(request, cache_key):
     # Hit the cache and see if it already has this key
     cached_data = memcache.get(cache_key)
     # If it does, return the cached data (unless we force a reload with the qs)
-    if cached_data is not None and not request.GET.get('force', None):
+    if cached_data is not None and not request.GET.get('force', None) and not settings.DEBUG:
         return cached_data
 
 #
@@ -68,6 +69,7 @@ def document_list(request, page=1):
             'page_number': page.number,
             'has_next': page.has_next(),
             'next_page_number': page.next_page_number(),
+            'next_page_url': '/page/%s/' % (page.next_page_number())
         }
         response = direct_to_template(request, 'document_list.html', context)
         # Add it to the cache
@@ -111,9 +113,8 @@ def project_detail(request, slug):
         context = {
             'object': obj,
             'document_list': obj.document_set.filter("is_published =", True).order("-publication_date").order("order_in_project"),
-            'share_url': 'http://documents.latimes.com%s' % obj.get_absolute_url()
         }
-        response = direct_to_template(request, 'documents/project_detail.html', context)
+        response = direct_to_template(request, 'project_detail.html', context)
         memcache.add(cache_key, response, 60)
         return response
 
@@ -134,9 +135,8 @@ def document_detail(request, slug):
             raise Http404
         context = {
             'object': obj,
-            'share_url': 'http://documents.latimes.com%s' % obj.get_absolute_url()
         }
-        response = direct_to_template(request, 'documents/document_detail.html', context)
+        response = direct_to_template(request, 'document_detail.html', context)
         memcache.add(cache_key, response, 60)
         return response
 
@@ -155,7 +155,7 @@ def tag_page(request, tag, page):
     if not tag:
         raise Http404
     object_list = Document.all().filter('tags =', tag.key()).filter("is_published =", True)
-    paginator = Paginator(object_list, 15)
+    paginator = Paginator(object_list, 10)
     # Limit it to thise page
     try:
         page = paginator.page(page)
@@ -164,12 +164,13 @@ def tag_page(request, tag, page):
     # Create a response and pass it back
     context = {
         'headline': 'Documents tagged &lsquo;%s&rsquo;' % tag.title,
-        'object_list': group_objects_by_number(page.object_list),
+        'object_list': page.object_list,
         'page_number': page.number,
         'has_next': page.has_next(),
         'next_page_number': page.next_page_number(),
+        'next_page_url': '/tag/%s/page/%s/' % (tag.title, page.next_page_number())
     }
-    return direct_to_template(request, 'documents/tag_detail.html', context)
+    return direct_to_template(request, 'document_list.html', context)
 
 
 def sitemap(request):
@@ -177,32 +178,11 @@ def sitemap(request):
     A sitemap for Google.
     """
     document_list = Document.all().filter("is_published =", True).order("-publication_date")
-    project_list = Project.all()
+    project_list = Project.all().filter("is_published =", True)
     context = {
         'document_list': document_list,
         'project_list': project_list,
     }
     return direct_to_template(request, 'sitemap.xml', context, mimetype='text/xml')
 
-#
-# Goofy ad hoc shiz
-#
-
-def ping(request):
-    """
-    Pings a random url in hopes of keeping AppEngine awake. 
-    
-    The goal is avoid "cold starts" that often throw 500 errors by keeping
-    an instance up at all times.
-    """
-    slug = request.GET.get("slug", None)
-    if slug:
-        url = 'http://latimes-document-cloud.appspot.com/%s/' % slug
-        return HttpResponse("OK")
-    else:
-        object_list = list(Document.all().filter("is_published =", True))
-        random_object = random.sample(object_list, 1)[0]
-        params = dict(slug=random_object.slug)
-        taskqueue.add(url='/ping/', params=params, method='GET')
-        return HttpResponse("OK")
 
